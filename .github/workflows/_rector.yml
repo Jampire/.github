@@ -34,10 +34,10 @@ on:
         type: string
 
 jobs:
-  code-analyse:
+  code-rector:
     timeout-minutes: 15
     if: github.event.pull_request.draft == false
-    name: code-analyse
+    name: code-rector
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
