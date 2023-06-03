@@ -13,6 +13,11 @@ on:
         required: false
         default: "['ubuntu-latest']"
         type: string
+      os:
+        description: "OS version to run on"
+        required: false
+        default: "['ubuntu-latest', 'windows-latest', 'macos-latest']"
+        type: string
       cache_key:
         description: "PHP extensions cache key"
         required: true
