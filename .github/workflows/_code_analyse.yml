@@ -7,7 +7,7 @@ on:
         description: "PHP extensions cache key"
         required: true
         type: string
-      php:
+      php_versions:
         description: "PHP version to run on"
         required: true
         default: "8.2"
@@ -43,7 +43,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ ubuntu-latest ]
-        php-version: ${{ fromJson(inputs.php) }}
+        php-version: ${{ fromJson(inputs.php_versions) }}
 
     steps:
       - name: Checkout code
