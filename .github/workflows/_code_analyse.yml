@@ -3,14 +3,14 @@ name: Code Analyse
 on:
   workflow_call:
     inputs:
-      cache_key:
-        description: "PHP extensions cache key"
-        required: true
-        type: string
       php_versions:
         description: "PHP version to run on"
         required: true
         default: "8.2"
+        type: string
+      cache_key:
+        description: "PHP extensions cache key"
+        required: true
         type: string
       extensions:
         description: "PHP extensions"
