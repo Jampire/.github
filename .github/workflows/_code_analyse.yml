@@ -9,7 +9,7 @@ on:
         type: string
       php:
         description: "PHP version to run on"
-        required: false
+        required: true
         default: "8.2"
         type: string
       extensions:
@@ -43,7 +43,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ ubuntu-latest ]
-        php-version: [ 8.2 ]
+        php-version: ${{ fromJson(inputs.php) }}
 
     steps:
       - name: Checkout code
