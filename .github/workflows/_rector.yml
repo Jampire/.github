@@ -5,7 +5,7 @@ on:
     inputs:
       php_versions:
         description: "PHP version to run on"
-        required: true
+        required: false
         default: "8.2"
         type: string
       cache_key:
