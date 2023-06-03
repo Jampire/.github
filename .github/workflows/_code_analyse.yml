@@ -6,7 +6,12 @@ on:
       php_versions:
         description: "PHP version to run on"
         required: false
-        default: "8.2"
+        default: "['8.2']"
+        type: string
+      os:
+        description: "OS version to run on"
+        required: false
+        default: "['ubuntu-latest']"
         type: string
       os:
         description: "OS version to run on"
