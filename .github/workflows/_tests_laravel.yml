@@ -37,6 +37,11 @@ on:
         default: max_execution_time=180, date.timezone=Asia/Tbilisi
         required: false
         type: string
+      type_coverage:
+        description: "Type Coverage"
+        default: 0
+        required: false
+        type: number
 
 jobs:
   tests:
