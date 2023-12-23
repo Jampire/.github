@@ -98,7 +98,13 @@ jobs:
           composer-options: "--prefer-dist"
 
       - name: Run test suite
+        id: tests-coverage
         run: |
           php -r "file_exists('.env') || copy('.env.example', '.env');"
           php artisan key:generate
-          php artisan test --coverage --min=${{ inputs.min_coverage }}
+          php -r "copy('.env', '.env.testing');"
+          php artisan test --coverage --parallel --min=${{ inputs.min_coverage }}
+          
+      - name: Run test type-coverage suite
+        if: success() && steps.tests-coverage.outcome == 'success' && ${{ inputs.type_coverage }} > 0
+        run: php artisan test --type-coverage --parallel --min=${{ inputs.type_coverage }}
