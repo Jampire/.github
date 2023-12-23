@@ -107,6 +107,8 @@ jobs:
         run: |
           php -r "file_exists('.env') || copy('.env.example', '.env');"
           php artisan key:generate
+          npm install
+          npm run build
           php artisan test --coverage --parallel --min=${{ inputs.min_coverage }}
           
       - name: Run test type-coverage suite
