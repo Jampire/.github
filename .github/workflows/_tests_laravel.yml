@@ -34,7 +34,7 @@ on:
         type: string
       ini_values:
         description: "PHP ini values"
-        default: max_execution_time=180, date.timezone=Asia/Tbilisi
+        default: max_execution_time=180, date.timezone=Europe/Warsaw
         required: false
         type: string
       type_coverage:
